@@ -1,15 +1,13 @@
-
-// <<<<<<< HEAD
 alert('Bienvenido a Legends Heroes');
 alert('Vamos a crear a tu Héroe.');
 var heroName = prompt('Ingresá el nombre de tu Héroe: ');
 var heroGender = prompt('Elegí el genero de tu personaje (m/f): ')
 var heroType = prompt('Elegí la clase de tu Héroe: \n' +
-                      'Caballero (0)\n' +
-                      'Mago         (1)\n' +
-                      'Arquero     (2)\n' +
-                      'Elfo            (3)\n' +
-                      'Enano       (4)\n');
+                      '(0)  ' + alliesTypes[0] +'\n' +
+                      '(1)  ' + alliesTypes[1] +'\n' +
+                      '(2)  ' + alliesTypes[2] +'\n' +
+                      '(3)  ' + alliesTypes[3] +'\n' +
+                      '(4)  ' + alliesTypes[4] +'\n');
 
 function Player(name, gender, type)
 {
@@ -18,36 +16,19 @@ function Player(name, gender, type)
     this.type = type;
     this.life = 100;
     this.mana = 100;
-    this.gold = 1000;
+    this.gold = 0;
+    this.attack = 50;
+    this.armor = 0;
+    this.weapon = 0;
 }
-
-var hero = Player(heroName);
-
 var alliesTypes = [ 'Caballero', 'Mago', 'Arquero', 'Elfo', 'Enano' ];
-var enemyTypes = [ 'Orco', 'Brujo', 'Asesino', 'Elfo Oscuro', 'Demonio' ]
-// =======
-// alert('Bienvenido a Legend Hero');
-// var playerName = prompt('Ingresá tu nombre: ');
-// var playerGender = prompt('Ingresá tu genero(m/f): ');
-// if(playerGender === 'm') {
-//     alert('Hola Lord ' + playerName + '. Vamos a crear tu personaje.');
-// }
-// else if(playerGender === 'f') {
-//     alert('Hola Lady ' + playerName + '. Vamos a crear tu personaje.');
-// }
+var enemyTypes = [ 'Orco', 'Brujo', 'Asesino', 'Elfo Oscuro', 'Demonio' ];
+var weaponKnight = [ 'Espada de Guardia', 'Espadas Dobles', 'Espada y Escudo', 'Hacha', 'Espada Real'];
+var weaponWizard = [ 'Varita Mágica', 'Anillo Mágico', 'Bastón', 'Bastón y Espada', 'Bastón Supremo'];
+var weaponArcher = ['Arco ','Arco','','','']
 
-// var heroName = prompt('¿Cuál será el nombre de tu personaje?');
-// var heroGender = prompt('¿Cuál será el genero del personaje?');
-// var heroType = prompt('Elegí la clase de tu héroe: \n');
+var heroPlayer = new Player(heroName);
 
-// var types = [
-//     Caballero,
-//     Arquero,
-//     Mago,
-//     Elfo,
-//     Enano,
-//     Demonio,
-//     Orco,
-
-// ]
-// >>>>>>> e76a873e769c9e95c7c2daa73f5eaab3cb8101dd
+alert('Bienvenido '+ heroPlayer.type + heroPlayer.name + '. Vamos a comenzar tu aventura.');
+alert('Estás en el Reino del Norte. Te despertaste en un callejón de un pequeño pueblo llamado \"Los Dedos\".');
+alert('Por el momento no tenés dinero, ni armadura, ni armas.');
