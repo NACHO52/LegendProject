@@ -3,13 +3,13 @@ alert('Bienvenido a Legends Heroes');
 var heroTypes = [ 'Caballero', 'Mago', 'Arquero', 'Elfo', 'Enano' ];
 var enemyTypes = [ 'Orco', 'Brujo', 'Asesino', 'Elfo Oscuro', 'Demonio', 'Dragón' ];
 var genders = ['Femenino','Masculino'];
-var sword = { damage = 20, defense = 20, value = 70};
-var bow = { damage = 30, defense = 10, value = 50};
+var sword = { damage : 20, defense : 20, value : 70};
+var bow = { damage : 30, defense : 10, value : 50};
 var weapons = [sword, bow];
 function Player(name, gender, type)
 {
     this.name = name;
-    this.gender = gender;
+    this.gender = genders[gender];
     this.type = heroTypes[type];
     this.life = 100;
     this.mana = 100;
@@ -26,14 +26,14 @@ var heroType = prompt('Elegí la clase de tu Héroe: \n' +
                       '(2)  ' + heroTypes[2] +'\n' +
                       '(3)  ' + heroTypes[3] +'\n' +
                       '(4)  ' + heroTypes[4] +'\n');
-var heroPlayer = new Player(heroName);
+var heroPlayer = new Player(heroName, heroGender, heroType);
 if(heroPlayer.gender === genders[1]) {
     alert('Bienvenido Lord '+ heroPlayer.name + '. Vamos a comenzar tu aventura.');
 } else if (heroPlayer.gender === genders[0]) {
     alert('Bienvenido Lady '+ heroPlayer.name + '. Vamos a comenzar tu aventura.');
 }
 
-alert('Estás en la ciudad de Puerto Blanco, acabas de despertarte en un muelle con una botella de ron en tu mano,\n sin tener idea de porque estás ahí. \nDecides levantarte y buscar a alguien conocido.');
+alert('Estás en la ciudad de Puerto Blanco, acabas de despertarte en un muelle con una botella de ron en tu mano, sin tener idea de porque estás ahí. \nDecides levantarte y buscar a alguien conocido.');
 alert('Te das cuenta de que perdiste el arma que tenías anoche. \nY lo unico que hay en tu bolsillo son '+ heroPlayer.gold + ' monedas de oro.');
 heroPlayer.gold = 0;
 alert('De repente, un ladron pasa corriendo y te roba tu oro.');
@@ -46,7 +46,7 @@ alert('Corrés velozmente para alcanzarlo, no podés ver su rostro por que lo cu
 alert('El ladón se escapa con tu oro.');
 alert('Empezás a caminar por la ciudad.')
 }
-alert('Te encotras con una multitud de personas que están viendo la ejecución de un piraata en la horca.');
+alert('Te encotras con una multitud de personas que están viendo la ejecución de un pirata en la horca.');
 var choise2 = prompt('Es una perfecta oputunidad para robar a las personas mientras estan distraidas' + '\n\"robar\" o \"ver la ejecución\"');
 if(choise2 === 'robar') {
     heroPlayer.gold += 450;
